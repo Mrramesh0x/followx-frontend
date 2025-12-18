@@ -1,0 +1,11 @@
+.query-heading{
+    text-align: center;
+    color: white;
+    margin-top: 200px;
+}
+
+@media (max-width:480px) {
+    .query-heading{
+        margin-top: 350px;
+    }
+}
