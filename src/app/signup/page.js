@@ -19,18 +19,18 @@ const router = useRouter()
 
 
     try {
-      const res = await axios.post("http://localhost:4000/api/auth/signup", {
+      const res = await axios.post("https://followx-backend.onrender.com/api/auth/signup", {
         name,
         email,
         password,
       },{withCredentials:true});
-     console.log(res)
+    //  console.log(res)
       setMessage(res.data.message || "Signup successful!");
       if(res.status===201){
         router.push("/login")
       }
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       setMessage(err.response?.data?.message || "Signup failed");
     } finally {
       setLoading(false);

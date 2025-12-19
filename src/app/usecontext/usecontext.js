@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    const response = axios.get("http://localhost:4000/api/auth/logout",{
+    const response = axios.get("https://followx-backend.onrender.com/api/auth/logout",{
       withCredentials:true
     })
    localStorage.removeItem("jwt")

@@ -16,7 +16,7 @@ export default function MyProfileCard() {
       setErr("");
       try {
         const res = await axios.get(
-          "http://localhost:4000/api/auth/me",
+          "https://followx-backend.onrender.com/api/auth/me",
           { withCredentials: true } 
         );
         setProfile(res.data.profile);

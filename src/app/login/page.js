@@ -22,7 +22,7 @@ const handleLogin = async (e) => {
   try {
     const [res] = await Promise.all([
       axios.post(
-        "http://localhost:4000/api/auth/login",
+        "https://followx-backend.onrender.com/api/auth/login",
         { email, password },
         { withCredentials: true }
       ),

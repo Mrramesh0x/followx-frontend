@@ -40,12 +40,12 @@ export default function Navbar() {
 
     try {
       const res = await axios.get(
-        "http://localhost:4000/api/auth/getnoti",
+        "https://followx-backend.onrender.com/api/auth/getnoti",
         { withCredentials: true }
       );
       setNotifications(res.data.notifications || []);
     } catch (err) {
-      console.log("Notification fetch error:", err);
+      // console.log("Notification fetch error:", err);
     }
   };
 

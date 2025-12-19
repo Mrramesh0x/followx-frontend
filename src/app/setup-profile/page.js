@@ -58,19 +58,19 @@ const SetupProfile = () => {
       setMsg("");
 
       const response = await axios.post(
-        "http://localhost:4000/api/auth/setup-profile",
+        "https://followx-backend.onrender.com/api/auth/setup-profile",
         { profileUrl, avatarUrl },
-        { withCredentials: true } // send + receive cookies
+        { withCredentials: true } 
       );
 
       setMsg("Profile saved successfully!");
-      console.log(response);
+      // console.log(response);
       if(response.status===200){
         router.push("/")
       }
 
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setMsg("Error saving profile.");
     } finally {
       setLoading(false);

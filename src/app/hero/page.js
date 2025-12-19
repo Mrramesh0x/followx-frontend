@@ -13,13 +13,13 @@ export default function ProfilesPage() {
   const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ---------------- FETCH PROFILES (LOGGED IN) ----------------
+ 
   const getProfilesExceptLoggedin = async () => {
     setLoading(true);
     try {
       const [res] = await Promise.all([
         axios.get(
-          "http://localhost:4000/api/auth/getallprofilesexceptloggedin",
+          "https://followx-backend.onrender.com/api/auth/getallprofilesexceptloggedin",
           { withCredentials: true }
         ),
         new Promise((resolve) => setTimeout(resolve, 5000))
@@ -28,19 +28,19 @@ export default function ProfilesPage() {
       setProfiles(res.data.profiles || []);
     } catch (error) {
       toast.error("Failed to fetch profiles");
-      console.log("Fetch error:", error);
+      // console.log("Fetch error:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  // ---------------- FETCH PROFILES (LOGGED OUT) ----------------
+ 
   const getAllProfiles = async () => {
     setLoading(true);
     try {
       const [res] = await Promise.all([
         axios.get(
-          "http://localhost:4000/api/auth/getallprofiles",
+          "https://followx-backend.onrender.com/api/auth/getallprofiles",
           { withCredentials: true }
         ),
         new Promise((resolve) => setTimeout(resolve, 5000))
@@ -49,7 +49,7 @@ export default function ProfilesPage() {
       setProfiles(res.data.profiles || []);
     } catch (error) {
       toast.error("Failed to fetch profiles");
-      console.log("Fetch error:", error);
+      // console.log("Fetch error:", error);
     } finally {
       setLoading(false);
     }
@@ -68,7 +68,7 @@ export default function ProfilesPage() {
   const handleVerify = async (recId) => {
     try {
       await axios.post(
-        "http://localhost:4000/api/auth/sendnoti",
+        "https://followx-backend.onrender.com/api/auth/sendnoti",
         { receiverId: recId },
         { withCredentials: true }
       );
@@ -82,10 +82,10 @@ export default function ProfilesPage() {
 
 
 const handleGetFollowingList = async () => {
-  const res = await axios.get("http://localhost:4000/api/auth/getfollowinglist",{
+  const res = await axios.get("https://followx-backend.onrender.com/api/auth/getfollowinglist",{
     withCredentials:true
   })
-  console.log(res)
+  // console.log(res)
 }
 
 
